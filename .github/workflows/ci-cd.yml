@@ -1,4 +1,4 @@
-name: CI/CD Frontend
+name: CI/CD Frontend V2
 
 on:
   push:
