@@ -29,7 +29,7 @@ jobs:
       with:
         context: ./frontend       # Carpeta donde está el Dockerfile del frontend
         push: true                # Sube la imagen a Docker Hub automáticamente
-        tags: nallepuz/temperaturas-frontend:latest  # Nombre y tag de la imagen
+        tags: nallepuz/temperaturas-frontend:${{ github.sha }}  # Nombre y tag de la imagen
 
     # Paso 4 - Se conecta por SSH a tu EC2 y actualiza el deployment en Kubernetes
     # Esto es el CD (Despliegue Continuo)
