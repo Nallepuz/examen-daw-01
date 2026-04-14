@@ -1,4 +1,4 @@
-name: CI/CD Frontend V2
+name: CI/CD Frontend
 
 on:
   push:
@@ -41,5 +41,4 @@ jobs:
         key: ${{ secrets.SSH_KEY }}        # Clave privada para conectarse por SSH
         port: ${{ secrets.SSH_PORT }}      # Puerto SSH (22)
         script: |
-          # Actualiza la imagen del frontend en el cluster de Kubernetes
-          kubectl set image deployment/temperaturas-frontend temperaturas-frontend=nallepuz/temperaturas-frontend:latest
+          kubectl set image deployment/temperaturas-frontend temperaturas-frontend=nallepuz/temperaturas-frontend:${{ github.sha }}
